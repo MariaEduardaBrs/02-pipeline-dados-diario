@@ -36,9 +36,13 @@ def gerar_svg(series):
     def posicao_y(valor):
         return base - altura_util * (valor - minimo) / faixa
 
-    partes = [
+        abertura = (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {LARGURA} {ALTURA}" '
-        'role="img" aria-label="Temperatura por cidade">',
+        'role="img" aria-label="Temperatura por cidade">'
+    )
+
+    partes = [
+        abertura,
         f'<line x1="{MARGEM}" y1="{base}" x2="{LARGURA - MARGEM}" y2="{base}" stroke="#888"/>',
         f'<line x1="{MARGEM}" y1="{MARGEM}" x2="{MARGEM}" y2="{base}" stroke="#888"/>',
         f'<text x="4" y="{MARGEM + 4}" font-size="11" fill="#666">{maximo:.1f} °C</text>',
