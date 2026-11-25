@@ -10,7 +10,7 @@ img { max-width: 100%; height: auto; }
 footer { margin-top:2rem; font-size: 0.9rem; opacity: 0.8; }"""
 
 def ultimos_por_cidade(linhas):
-  """Devolve {cidade: linha mais recente}."""
+    """Devolve {cidade: linha mais recente}."""
     ultimos = {}
     for linha in sorted(linhas, key=lambda item: item["momento"]):
         ultimos[linha["cidade"]] = linha
