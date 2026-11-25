@@ -36,10 +36,7 @@ def gerar_svg(series):
     def posicao_y(valor):
         return base - altura_util * (valor - minimo) / faixa
 
-        abertura = (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {LARGURA} {ALTURA}" '
-        'role="img" aria-label="Temperatura por cidade">'
-    )
+    abertura = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {LARGURA} {ALTURA}" role="img" aria-label="Temperatura por cidade">'
 
     partes = [
         abertura,
@@ -58,13 +55,12 @@ def gerar_svg(series):
             f'<polyline fill="none" stroke="{cor}" stroke-width="2" points="{pontos}"/>'
         )
         for i, valor in enumerate(valores):
-            partes.append(
-                f'<circle cx="{posicao_x(i):.1f}" cy="{posicao_y(valor):.1f}" '
-                f'r="3" fill="{cor}"/>'
-            )
+            x = posicao_x(i)
+            y = posicao_y(valor)
+            partes.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="{cor}"/>')
+        legenda_x = MARGEM + 130 * indice
         partes.append(
-            f'<text x="{MARGEM + 130 * indice}" y="24" font-size="13" '
-            f'fill="{cor}">{escape(cidade)}</text>'
+            f'<text x="{legenda_x}" y="24" font-size="13" fill="{cor}">{escape(cidade)}</text>'
         )
 
     partes.append("</svg>")
