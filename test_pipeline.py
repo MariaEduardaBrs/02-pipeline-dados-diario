@@ -24,5 +24,5 @@ def test_executar_duas_vezes_nao_duplica_registros(tmp_path, monkeypatch):
     caminho_csv = tmp_path / "historico.csv"
     caminho_svg = tmp_path / "grafico.svg"
 
-   pipeline.executar(caminho_csv, caminho_svg)
-   assert pipeline.executar(caminho_csv, caminho_svg) == 0
+    pipeline.executar(caminho_csv, caminho_svg)
+    assert pipeline.executar(caminho_csv, caminho_svg) == 0
