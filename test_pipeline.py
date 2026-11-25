@@ -9,7 +9,7 @@ REGISTRO = {
 }
 
 def test_executar_grava_historice_e_gera_grafico(tmp_path, monkeypatch):
-    monkeypath.setattr(pipeline.coleta, "coletar", lambda: [REGISTRO])
+    monkeypatch.setattr(pipeline.coleta, "coletar", lambda: [REGISTRO])
     caminho_csv = tmp_path / "dados" / "historico.csv"
     caminho_svg = tmp_path / "site" / "grafico.svg"
 
