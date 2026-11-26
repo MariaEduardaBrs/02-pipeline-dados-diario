@@ -49,7 +49,6 @@ flowchart LR
 - **Proteção da `main`.** Só recebe código por pull request com Lint e Testes verdes (Python 3.12 e 3.13).
 - **Dependências travadas.** Versões fixas no `requirements.txt`, instaladas só em formato compilado (`--only-binary`), e Dependabot semanal para atualizá-las.
 - **Execuções concorrentes.** O `concurrency` impede duas publicações ao mesmo tempo.
-- CONFIRA: **Coleta com nova tentativa.** Se a API falhar, o script tenta de novo até 3 vezes antes de desistir. (Apague esta linha se essa mudança ainda não está na `main`.)
 
 ## Como rodar os testes
 
@@ -69,4 +68,4 @@ python -m pytest
 
 Dados meteorológicos: [Open-Meteo.com](https://open-meteo.com/), licença CC BY 4.0.
 
-CONFIRA: se o repositório tem um arquivo `LICENSE`, acrescente aqui uma linha com o tipo da licença.
+
