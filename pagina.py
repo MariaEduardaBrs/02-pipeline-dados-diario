@@ -52,7 +52,7 @@ def gerar_html(linhas):
 <p class="sub">Pipeline diário de dados com GitHub Actions. Última coleta: {atualizado} (horário da API).</p>
 <div class="card">
 <img src="grafico.svg" alt="Gráfico de temperatura por cidade">
-<p class="nota">A coleta roda todo dia por volta das 06:17 (horário de Brasília). As linhas do gráfico aparecem a partir do segundo dia de dados.</p>
+<p class="nota">A coleta roda todo dia por volta das 06:17 (horário de Brasília).</p>
 </div>
 <div class="card">
 <table>
