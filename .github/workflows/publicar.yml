@@ -19,13 +19,13 @@ jobs:
       permissions:
         contents: write
       steps:
-       - uses: actions/checkout@v4
+       - uses: actions/checkout@v7
 
-       - uses: actions/checkout@v4
+       - uses: actions/checkout@v7
          with:
           ref: dados
           path: historico
-       - uses: actions/setup-python@v5
+       - uses: actions/setup-python@v7
          with:
            python-version: "3.13"
        - name: Rodar o pipeline
@@ -47,7 +47,7 @@ jobs:
             git commit -m "Atualiza historico de dados"
             git push origin HEAD:dados
             fi
-       - uses: actions/upload-pages-artifact@v4
+       - uses: actions/upload-pages-artifact@v5
          with:
            path: site
   publicar:
@@ -64,6 +64,6 @@ jobs:
     steps:
       - name: Publicar
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
        
         
