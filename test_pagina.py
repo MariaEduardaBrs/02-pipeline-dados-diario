@@ -42,3 +42,8 @@ def test_gerar_html_escapa_o_nome_da_cidade():
 def test_gerar_html_sem_dados_gera_erro():
     with pytest.raises(ValueError):
         pagina.gerar_html([])
+
+
+def test_gerar_html_coloca_a_cidade_dentro_de_uma_celula():
+    conteudo = pagina.gerar_html(LINHAS)
+    assert "<tr><td>A</td><td>27.0 °C</td>" in conteudo
